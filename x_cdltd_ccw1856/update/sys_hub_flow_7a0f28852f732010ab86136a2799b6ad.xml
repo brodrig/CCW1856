@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Remote deployment via source control (github).</description>
+        <internal_name>remote_deploy_from_sc</internal_name>
+        <label_cache>[{"name":"Created or Updated_1.current.git_branch","label":"Trigger➛Deployment Request Record➛Git Branch","reference":"","reference_display":"Git Branch","type":"string","base_type":"string","parent_table_name":"x_cdltd_ccw1856_deployment_request","column_name":"git_branch"},{"name":"Created or Updated_1.current.team.environment_setup.test_environment.instance_url","label":"Trigger➛Deployment Request Record➛Team➛Environment Setup➛Test Environment➛Instance URL","reference":"","reference_display":"Instance URL","type":"url","base_type":"url","parent_table_name":"x_cdltd_ccw1856_environments","column_name":"instance_url"},{"name":"Created or Updated_1.current.application.remote_sys_id","label":"Trigger➛Deployment Request Record➛Application➛Remote Sys ID","reference":"","reference_display":"Remote Sys ID","type":"string","base_type":"string","parent_table_name":"x_cdltd_ccw1856_dev_scopes","column_name":"remote_sys_id"},{"name":"Created or Updated_1.current.application.sys_id","label":"Trigger➛Deployment Request Record➛Application➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_cdltd_ccw1856_dev_scopes","column_name":"sys_id"},{"name":"Created or Updated_1.current.application","label":"Trigger➛Deployment Request Record➛Application","reference":"x_cdltd_ccw1856_dev_scopes","reference_display":"Dev Scopes","type":"reference","base_type":"reference","parent_table_name":"x_cdltd_ccw1856_deployment_request","column_name":"application"}]</label_cache>
+        <latest_snapshot>417230c92f732010ab86136a2799b6fd</latest_snapshot>
+        <master_snapshot>417230c92f732010ab86136a2799b6fd</master_snapshot>
+        <name>Remote Deploy from SC</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id>617270c92f732010ab86136a2799b66f</remote_trigger_id>
+        <run_as>system</run_as>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:15:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7a0f28852f732010ab86136a2799b6ad</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Remote Deploy from SC</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name>sys_hub_flow_7a0f28852f732010ab86136a2799b6ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=7a0f28852f732010ab86136a2799b6ad"/>
+    <sys_variable_value action="delete_multiple" query="document_key=7a0f28852f732010ab86136a2799b6ad"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_cdltd_ccw1856_deployment_request">state=1^actionCHANGESTO13<item display_value="Open" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="1"/>
+            <item display_value="Remote Deploy" endquery="false" field="action" goto="false" newquery="false" operator="CHANGESTO" or="false" value="13"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>617270c92f732010ab86136a2799b66f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:36</sys_updated_on>
+        <table>x_cdltd_ccw1856_deployment_request</table>
+    </sys_flow_record_trigger>
+    <sys_hub_flow_component action="delete_multiple" query="flow=7a0f28852f732010ab86136a2799b6ad^sys_idNOT IN1110f0492f732010ab86136a2799b6f0"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</flow>
+        <inputs/>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Apply Changes From Source Control With ID">8990073c77433300d4bdaeca781061e2</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>1110f0492f732010ab86136a2799b6f0</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <ui_id>e2c7036f-e0eb-4629-bb68-6c6d37a06442</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=1110f0492f732010ab86136a2799b6f0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_sub_flow_instance</document>
+        <document_key>1110f0492f732010ab86136a2799b6f0</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>5510f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <value>791478b790c010107f4468f7a3a96f4f</value>
+        <variable display_value="">8a7d546c77133300d4bdaeca781061ba</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=1110f0492f732010ab86136a2799b6f0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>app_sys_id</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>d110f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.application.remote_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>branch_name</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>1110f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.git_branch}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>credential_alias</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>5d10f0492f732010ab86136a2799b6f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>instance_url</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>9510f0492f732010ab86136a2799b6f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.team.environment_setup.test_environment.instance_url}}</value>
+    </sys_element_mapping>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=7a0f28852f732010ab86136a2799b6ad^sys_idNOT INbd4f2c092f732010ab86136a2799b600"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</flow>
+        <name>Created or Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>bd4f2c092f732010ab86136a2799b600</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=bd4f2c092f732010ab86136a2799b600"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>bd4f2c092f732010ab86136a2799b600</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>3d4f2c092f732010ab86136a2799b601</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <value>every</value>
+        <variable display_value="">2b9def50c31132002841b63b12d3ae5b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>bd4f2c092f732010ab86136a2799b600</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>b54f2c092f732010ab86136a2799b602</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <value>x_cdltd_ccw1856_deployment_request</value>
+        <variable display_value="">cf1e1980c32222002841b63b12d3aea0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>bd4f2c092f732010ab86136a2799b600</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>f14f2c092f732010ab86136a2799b602</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <value>state=1^actionCHANGESTO13</value>
+        <variable display_value="">707dd180c32222002841b63b12d3aecb</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=7a0f28852f732010ab86136a2799b6ad^sys_idNOT INfa0f28852f732010ab86136a2799b6ae"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>7a0f28852f732010ab86136a2799b6ad</id>
+        <name>Remote Deploy from SC</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:15:40</sys_created_on>
+        <sys_id>fa0f28852f732010ab86136a2799b6ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:15:40</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=7a0f28852f732010ab86136a2799b6ad^sys_idNOT IN314fe8092f732010ab86136a2799b6fa,bd4fa8852f732010ab86136a2799b611,f94fa8852f732010ab86136a2799b617"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</model>
+        <model_id>7a0f28852f732010ab86136a2799b6ad</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>314fe8092f732010ab86136a2799b6fa</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</model>
+        <model_id>7a0f28852f732010ab86136a2799b6ad</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>bd4fa8852f732010ab86136a2799b611</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDed7270c97c7320105d2aa33ac72ec273,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</model>
+        <model_id>7a0f28852f732010ab86136a2799b6ad</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>f94fa8852f732010ab86136a2799b617</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=7a0f28852f732010ab86136a2799b6ad^sys_idNOT IN1110f0492f732010ab86136a2799b6f0"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</flow>
+        <inputs/>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Apply Changes From Source Control With ID">8990073c77433300d4bdaeca781061e2</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>1110f0492f732010ab86136a2799b6f0</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <ui_id>e2c7036f-e0eb-4629-bb68-6c6d37a06442</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=1110f0492f732010ab86136a2799b6f0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_sub_flow_instance</document>
+        <document_key>1110f0492f732010ab86136a2799b6f0</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>5510f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <value>791478b790c010107f4468f7a3a96f4f</value>
+        <variable display_value="">8a7d546c77133300d4bdaeca781061ba</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=1110f0492f732010ab86136a2799b6f0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>app_sys_id</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>d110f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.application.remote_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>branch_name</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>1110f0492f732010ab86136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.git_branch}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>credential_alias</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>5d10f0492f732010ab86136a2799b6f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>instance_url</field>
+        <id>1110f0492f732010ab86136a2799b6f0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:20:13</sys_created_on>
+        <sys_id>9510f0492f732010ab86136a2799b6f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:20:13</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.team.environment_setup.test_environment.instance_url}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad^sys_idNOT IN754fa8852f732010ab86136a2799b616,b94fe8092f732010ab86136a2799b6f8,f94fe8092f732010ab86136a2799b6fd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>754fa8852f732010ab86136a2799b616</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>b94fe8092f732010ab86136a2799b6f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_7a0f28852f732010ab86136a2799b6ad</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:16:42</sys_created_on>
+        <sys_id>f94fe8092f732010ab86136a2799b6fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:16:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=7a0f28852f732010ab86136a2799b6ad^sys_idNOT IN6d7270c92f732010ab86136a2799b66f"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
+        <plan/>
+        <plan_id>7a0f28852f732010ab86136a2799b6ad</plan_id>
+        <snapshot>417230c92f732010ab86136a2799b6fd</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6d7270c92f732010ab86136a2799b66f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <trigger display_value="">617270c92f732010ab86136a2799b66f</trigger>
+    </sys_flow_trigger_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Remote deployment via source control (github).</description>
+        <internal_name>remote_deploy_from_sc</internal_name>
+        <label_cache>[{"name":"Created or Updated_1.current.git_branch","label":"Trigger➛Deployment Request Record➛Git Branch","reference":"","reference_display":"Git Branch","type":"string","base_type":"string","parent_table_name":"x_cdltd_ccw1856_deployment_request","column_name":"git_branch"},{"name":"Created or Updated_1.current.team.environment_setup.test_environment.instance_url","label":"Trigger➛Deployment Request Record➛Team➛Environment Setup➛Test Environment➛Instance URL","reference":"","reference_display":"Instance URL","type":"url","base_type":"url","parent_table_name":"x_cdltd_ccw1856_environments","column_name":"instance_url"},{"name":"Created or Updated_1.current.application.remote_sys_id","label":"Trigger➛Deployment Request Record➛Application➛Remote Sys ID","reference":"","reference_display":"Remote Sys ID","type":"string","base_type":"string","parent_table_name":"x_cdltd_ccw1856_dev_scopes","column_name":"remote_sys_id"},{"name":"Created or Updated_1.current.application.sys_id","label":"Trigger➛Deployment Request Record➛Application➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_cdltd_ccw1856_dev_scopes","column_name":"sys_id"},{"name":"Created or Updated_1.current.application","label":"Trigger➛Deployment Request Record➛Application","reference":"x_cdltd_ccw1856_dev_scopes","reference_display":"Dev Scopes","type":"reference","base_type":"reference","parent_table_name":"x_cdltd_ccw1856_deployment_request","column_name":"application"}]</label_cache>
+        <master>true</master>
+        <name>Remote Deploy from SC</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Remote Deploy from SC">7a0f28852f732010ab86136a2799b6ad</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>417230c92f732010ab86136a2799b6fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:34</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=417230c92f732010ab86136a2799b6fd"/>
+    <sys_variable_value action="delete_multiple" query="document_key=417230c92f732010ab86136a2799b6fd"/>
+    <sys_hub_flow_component action="delete_multiple" query="flow=417230c92f732010ab86136a2799b6fd^sys_idNOT IN517270c92f732010ab86136a2799b631"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</flow>
+        <inputs/>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Apply Changes From Source Control With ID">8990073c77433300d4bdaeca781061e2</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>517270c92f732010ab86136a2799b631</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <ui_id>e2c7036f-e0eb-4629-bb68-6c6d37a06442</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=517270c92f732010ab86136a2799b631"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_sub_flow_instance</document>
+        <document_key>517270c92f732010ab86136a2799b631</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>997270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <value>791478b790c010107f4468f7a3a96f4f</value>
+        <variable display_value="">8a7d546c77133300d4bdaeca781061ba</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=517270c92f732010ab86136a2799b631"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>app_sys_id</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>197270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.application.remote_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>branch_name</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>557270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.git_branch}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>credential_alias</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>917270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>instance_url</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>dd7270c92f732010ab86136a2799b632</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.team.environment_setup.test_environment.instance_url}}</value>
+    </sys_element_mapping>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=417230c92f732010ab86136a2799b6fd^sys_idNOT INdd7270c92f732010ab86136a2799b62e"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</flow>
+        <name>Created or Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>dd7270c92f732010ab86136a2799b62e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:37</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=dd7270c92f732010ab86136a2799b62e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>dd7270c92f732010ab86136a2799b62e</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>1d7270c92f732010ab86136a2799b630</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <value>x_cdltd_ccw1856_deployment_request</value>
+        <variable display_value="">cf1e1980c32222002841b63b12d3aea0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>dd7270c92f732010ab86136a2799b62e</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>597270c92f732010ab86136a2799b630</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <value>state=1^actionCHANGESTO13</value>
+        <variable display_value="">707dd180c32222002841b63b12d3aecb</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>dd7270c92f732010ab86136a2799b62e</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>957270c92f732010ab86136a2799b630</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <value>every</value>
+        <variable display_value="">2b9def50c31132002841b63b12d3ae5b</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=417230c92f732010ab86136a2799b6fd^sys_idNOT IN097230c92f732010ab86136a2799b6fd"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>417230c92f732010ab86136a2799b6fd</id>
+        <name>Remote Deploy from SC</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:34</sys_created_on>
+        <sys_id>097230c92f732010ab86136a2799b6fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:34</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=417230c92f732010ab86136a2799b6fd^sys_idNOT IN0d7270c92f732010ab86136a2799b623,417270c92f732010ab86136a2799b61b,857270c92f732010ab86136a2799b600"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</model>
+        <model_id>417230c92f732010ab86136a2799b6fd</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>0d7270c92f732010ab86136a2799b623</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FD857230c96f732010467716672eefe2fe,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</model>
+        <model_id>417230c92f732010ab86136a2799b6fd</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>417270c92f732010ab86136a2799b61b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</model>
+        <model_id>417230c92f732010ab86136a2799b6fd</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>857270c92f732010ab86136a2799b600</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=417230c92f732010ab86136a2799b6fd^sys_idNOT IN517270c92f732010ab86136a2799b631"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Remote Deploy from SC">417230c92f732010ab86136a2799b6fd</flow>
+        <inputs/>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Apply Changes From Source Control With ID">8990073c77433300d4bdaeca781061e2</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>517270c92f732010ab86136a2799b631</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <ui_id>e2c7036f-e0eb-4629-bb68-6c6d37a06442</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=517270c92f732010ab86136a2799b631"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_sub_flow_instance</document>
+        <document_key>517270c92f732010ab86136a2799b631</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>997270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <value>791478b790c010107f4468f7a3a96f4f</value>
+        <variable display_value="">8a7d546c77133300d4bdaeca781061ba</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=517270c92f732010ab86136a2799b631"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>app_sys_id</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>197270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.application.remote_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>branch_name</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>557270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.git_branch}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>credential_alias</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>917270c92f732010ab86136a2799b633</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>instance_url</field>
+        <id>517270c92f732010ab86136a2799b631</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>dd7270c92f732010ab86136a2799b632</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8990073c77433300d4bdaeca781061e2</table>
+        <value>{{Created or Updated_1.current.team.environment_setup.test_environment.instance_url}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd^sys_idNOT IN0d7270c92f732010ab86136a2799b61f,c97270c92f732010ab86136a2799b604,d17270c92f732010ab86136a2799b628"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>0d7270c92f732010ab86136a2799b61f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>c97270c92f732010ab86136a2799b604</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_417230c92f732010ab86136a2799b6fd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 19:30:35</sys_created_on>
+        <sys_id>d17270c92f732010ab86136a2799b628</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CCW1856" source="x_cdltd_ccw1856">b5a05473908010107f4468f7a3a96f5c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW1856">b5a05473908010107f4468f7a3a96f5c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 19:30:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+</record_update>
